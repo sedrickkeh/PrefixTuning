@@ -789,13 +789,13 @@ def main():
 
         else:
             if ('lowdata' in args.model_name_or_path) or (args.prefixModel_name_or_path is not None and 'lowdata' in args.prefixModel_name_or_path):
-                test_path = '/u/scr/xlisali/e2e_data/src1_valid.txt'
+                test_path = '/content/PrefixTuning/data/e2e_data/src1_valid.txt'
             else:
 
                 if args.eval_dataset == 'valid':
-                    test_path = '/u/scr/xlisali/e2e_data/src1_valid.txt'
+                    test_path = '/content/PrefixTuning/data/e2e_data/src1_valid.txt'
                 elif args.eval_dataset == 'test':
-                    test_path = '/u/scr/xlisali/e2e_data/src1_test.txt'
+                    test_path = '/content/PrefixTuning/data/e2e_data/src1_test.txt'
 
             print('using the test path ', test_path)
             if args.prefixModel_name_or_path is not None:
@@ -814,16 +814,16 @@ def main():
             prompt_text_lst = list(prompt_text_dict.keys())
             split_file = args.eval_dataset
             decode_mode = 'beam'
-            curr_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            curr_dir = os.path.join('/content/PrefixTuning/gpt2/webnlg_models',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file, decode_mode))
             print(curr_dir)
-            gold_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            gold_dir = os.path.join('/content/PrefixTuning/gpt2/webnlg_models',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file,'gold'))
             print(gold_dir)
             write_e2e_corr(prompt_text_lst, prompt_text_dict, gold_dir)
-            src_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            src_dir = os.path.join('/content/PrefixTuning/gpt2/webnlg_models',
                                    args.gen_dir,
                                    '{}_{}_{}'.format(temp,split_file, 'src'))
             write_e2e_src(prompt_text_lst, src_dir)
@@ -841,7 +841,7 @@ def main():
                 assert False,  "eval_dataset needs to be [valid, test]"
             prompt_text_dict = read_webnlg_files(test_path, tokenizer)
         elif args.task_mode == 'triples':
-            test_path = "/u/scr/xlisali/DART/dart/data/v1.1.1/dart-v1.1.1-full-test.json"
+            test_path = "/content/PrefixTuning/data/dart/dart-v1.1.1-full-test.json"
             # test_path = "/u/scr/xlisali/DART/dart/data/v1.1.1/dart-v1.1.1-full-dev.json"
             prompt_text_dict = read_triples_files(test_path, tokenizer)
 
@@ -859,16 +859,16 @@ def main():
                 temp = os.path.basename(args.model_name_or_path)
             split_file = args.eval_dataset # test
             decode_mode = 'beam'
-            curr_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            curr_dir = os.path.join('/content/PrefixTuning/gpt2/webnlg_models',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file, decode_mode))
             print(curr_dir)
-            gold_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            gold_dir = os.path.join('/content/PrefixTuning/gpt2/webnlg_models',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file, 'gold'))
             print(gold_dir)
             write_e2e_corr(prompt_text_pair, prompt_text_dict, gold_dir)
-            src_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            src_dir = os.path.join('/content/PrefixTuning/gpt2/webnlg_models',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file, 'src'))
             write_e2e_src(prompt_text_pair, src_dir)
@@ -1324,14 +1324,14 @@ def main():
     if args.task_mode == 'data2text':
         out_file_eval = curr_dir+'_eval'
         print(out_file_eval, '\n', gold_dir, '\n', curr_dir)
-        os.system("python /u/scr/xlisali/e2e-metrics/measure_scores.py "
+        os.system("python /content/e2e-metrics/measure_scores.py "
                   "{} {} -p  -t -H >> {}".format(gold_dir, curr_dir, out_file_eval))
 
     elif args.task_mode == 'webnlg':
         out_file_eval = curr_dir + '_eval'
         print(out_file_eval, '\n', gold_dir, '\n', curr_dir)
         tagging = os.path.basename(curr_dir)
-        os.system("bash /u/scr/xlisali/DART/dart/evaluation/run_eval_on_webnlg.sh "
+        os.system("bash /content/dart/evaluation/run_eval_on_webnlg.sh "
                   "{} {} >> {}".format(curr_dir, tagging, out_file_eval))
 
 
