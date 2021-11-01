@@ -176,8 +176,9 @@ if __name__ == '__main__':
 
     elif mode == 'webnlg':
         Token_FILE = MODEL_FILE
+        gen_dir = 'webnlg_models'
         # gen_dir = 'webNLG_results'
-        gen_dir = 'webNLG_results2'
+        # gen_dir = 'webNLG_results2'
 
         sub_model_name = os.path.basename(MODEL_FILE)
 
