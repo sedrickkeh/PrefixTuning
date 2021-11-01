@@ -834,9 +834,9 @@ def main():
         QUICK_CHECK = False
         if args.task_mode == 'webnlg':
             if args.eval_dataset == 'valid':
-                test_path = "/u/scr/xlisali/WebNLG/webnlg-dataset/webnlg_challenge_2017/dev.json"
+                test_path = "/content/PrefixTuning/data/webnlg_challenge_2017/dev.json"
             elif args.eval_dataset == 'test':
-                test_path = "/u/scr/xlisali/WebNLG/webnlg-dataset/webnlg_challenge_2017/test.json"
+                test_path = "/content/PrefixTuning/data/webnlg_challenge_2017/test.json"
             else:
                 assert False,  "eval_dataset needs to be [valid, test]"
             prompt_text_dict = read_webnlg_files(test_path, tokenizer)
