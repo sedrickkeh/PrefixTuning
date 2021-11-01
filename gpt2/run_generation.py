@@ -814,16 +814,16 @@ def main():
             prompt_text_lst = list(prompt_text_dict.keys())
             split_file = args.eval_dataset
             decode_mode = 'beam'
-            curr_dir = os.path.join('/content/PrefixTuning/gpt2/webnlg_models',
+            curr_dir = os.path.join('/content/PrefixTuning/gpt2',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file, decode_mode))
             print(curr_dir)
-            gold_dir = os.path.join('/content/PrefixTuning/gpt2/webnlg_models',
+            gold_dir = os.path.join('/content/PrefixTuning/gpt2',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file,'gold'))
             print(gold_dir)
             write_e2e_corr(prompt_text_lst, prompt_text_dict, gold_dir)
-            src_dir = os.path.join('/content/PrefixTuning/gpt2/webnlg_models',
+            src_dir = os.path.join('/content/PrefixTuning/gpt2',
                                    args.gen_dir,
                                    '{}_{}_{}'.format(temp,split_file, 'src'))
             write_e2e_src(prompt_text_lst, src_dir)
@@ -859,16 +859,16 @@ def main():
                 temp = os.path.basename(args.model_name_or_path)
             split_file = args.eval_dataset # test
             decode_mode = 'beam'
-            curr_dir = os.path.join('/content/PrefixTuning/gpt2/webnlg_models',
+            curr_dir = os.path.join('/content/PrefixTuning/gpt2',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file, decode_mode))
             print(curr_dir)
-            gold_dir = os.path.join('/content/PrefixTuning/gpt2/webnlg_models',
+            gold_dir = os.path.join('/content/PrefixTuning/gpt2',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file, 'gold'))
             print(gold_dir)
             write_e2e_corr(prompt_text_pair, prompt_text_dict, gold_dir)
-            src_dir = os.path.join('/content/PrefixTuning/gpt2/webnlg_models',
+            src_dir = os.path.join('/content/PrefixTuning/gpt2',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file, 'src'))
             write_e2e_src(prompt_text_pair, src_dir)
