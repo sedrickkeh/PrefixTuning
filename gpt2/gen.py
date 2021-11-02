@@ -16,7 +16,7 @@ if __name__ == '__main__':
         Token_FILE = MODEL_FILE
 
         # gen_dir = 'e2e_results_conv'
-        gen_dir = 'e2e_results_conv2'
+        gen_dir = 'save_e2e_models_convcheck'
 
         sub_model_name = os.path.basename(MODEL_FILE)
         if 'checkpoint-' in sub_model_name:
