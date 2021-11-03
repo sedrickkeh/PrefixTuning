@@ -140,7 +140,7 @@ if __name__ == '__main__':
     elif mode == 'triples':
         Token_FILE = MODEL_FILE
 
-        gen_dir = 'triples_results'
+        gen_dir = 'triples_models'
         sub_model_name = os.path.basename(MODEL_FILE)
 
         if 'finetune' in MODEL_FILE:
