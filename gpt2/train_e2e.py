@@ -178,8 +178,8 @@ if __name__ == '__main__':
 
 
     elif args.mode == 'triples':
-        TRAIN_FILE = "/u/scr/xlisali/DART/dart/data/v1.1.1/dart-v1.1.1-full-train.json"
-        TEST_FILE = "/u/scr/xlisali/DART/dart/data/v1.1.1/dart-v1.1.1-full-dev.json"
+        TRAIN_FILE = "/content/PrefixTuning/data/dart/dart-v1.1.1-full-train.json"
+        TEST_FILE = "/content/PrefixTuning/data/dart/dart-v1.1.1-full-dev.json"
         folder_name = "triples_models/"
 
 
