@@ -136,8 +136,8 @@ if __name__ == '__main__':
 
         if args.notes is not None and 'lowdata' in args.notes:
             _, temp_seed, temp_size = args.notes.split('_')
-            TRAIN_FILE = "/juice/u/xlisali/e2e_lowdata/lowdata_{}_{}_train.txt".format(temp_seed, temp_size)
-            TEST_FILE = "/juice/u/xlisali/e2e_lowdata/lowdata_{}_{}_valid.txt".format(temp_seed, temp_size)
+            TRAIN_FILE = "../data/e2e_lowdata/lowdata_{}_{}_train.txt".format(temp_seed, temp_size)
+            TEST_FILE = "../data/e2e_lowdata/lowdata_{}_{}_valid.txt".format(temp_seed, temp_size)
             folder_name = 'e2e_lowdata_models_prefixtune/' # 50, 200
 
 
