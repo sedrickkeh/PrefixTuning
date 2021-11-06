@@ -1029,7 +1029,7 @@ def main():
 
     if 'lowdata' in training_args.output_dir:
         print('evaluating the PPL on full dev data. ')
-        data_args.eval_data_file = "/u/scr/xlisali/e2e_data/src1_valid.txt"
+        data_args.eval_data_file = "../data/e2e_data/src1_valid.txt"
         eval_dataset = (
             get_dataset(data_args, tokenizer=tokenizer, evaluate=True, cache_dir=model_args.cache_dir,
                         training_args=training_args, finetune_mode=(model_args.tuning_mode == 'finetune'))
