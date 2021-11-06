@@ -1054,8 +1054,8 @@ def main():
 
         print('running evaluation on ', checkpoint_path)
 
-        # os.system('python gen.py data2text yes valid {} no'.format(checkpoint_path))
-        # os.system('python gen.py data2text yes test {} no'.format(checkpoint_path))
+        os.system('python gen.py data2text_lowdata yes valid {} no'.format(checkpoint_path))
+        os.system('python gen.py data2text_lowdata yes test {} no'.format(checkpoint_path))
 
     elif data_args.task_mode == 'data2text':
         del model
