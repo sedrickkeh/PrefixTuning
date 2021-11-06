@@ -20,6 +20,7 @@ if __name__ == '__main__':
             gen_dir = 'save_e2e_models_convcheck'
         elif mode == 'data2text_lowdata':
             gen_dir = 'e2e_lowdata_models_prefixtune'
+            mode = 'data2text'
 
         sub_model_name = os.path.basename(MODEL_FILE)
         if 'checkpoint-' in sub_model_name:
